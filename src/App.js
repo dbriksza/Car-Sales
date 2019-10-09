@@ -20,23 +20,22 @@ const App = ({ state, addFeature, removeFeature }) => {
     <div className="boxes">
       <div className="box">
         <Header car={state.car} />
-        <AddedFeatures car={state.car} remove={remover} />
+        <AddedFeatures car={state.car} remover={remover} />
       </div>
       <div className="box">
-        <AdditionalFeatures store={state.additionalFeatures} add={adder} />
+        <AdditionalFeatures store={state.additionalFeatures} adder={adder} />
         <Total car={state.car} additionalPrice={state.additionalPrice} />
       </div>
     </div>
   );
 };
 
-export default App;
-
 const mapStateToProps = state => {
   return {
     state: state
-  }
-}
+  };
+};
 export default connect(
-  mapStateToProps, {addFeature, removeFeature}
+  mapStateToProps,
+  { addFeature, removeFeature }
 )(App);
