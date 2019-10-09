@@ -17,7 +17,7 @@ const initialState = {
   ]
 };
 
-const reducer = (state = intitalState, action) => {
+export const reducer = (state = initialState, action) => {
   console.log("the reducer is doing: ", action);
   switch (action.type) {
     case ADD_FEATURE:
